@@ -1,0 +1,11 @@
+aiogram
+torch
+torchvision
+matplotlib
+tensorflow
+tensorflow-hub
+scikit-learn
+pandas
+emoji
+opencv-python
+pyyaml

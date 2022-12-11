@@ -1,0 +1,37 @@
+version: 1
+formatters:
+  simple:
+    class: logging.Formatter
+    format: "%(asctime)s %(name)s:%(levelname)s %(message)s"
+    datefmt: "%Y-%m-%d %H:%M:%S"
+handlers:
+  file_handler:
+    class: logging.FileHandler
+    filename: style_transfer_bot.log
+    level: INFO
+    formatter: simple
+  stream_handler:
+    class: logging.StreamHandler
+    stream: ext://sys.stderr
+    level: DEBUG
+    formatter: simple
+loggers:
+  style_transfer_bot:
+    level: DEBUG
+    handlers: [file_handler, stream_handler]
+    propagate: no
+  ml_model:
+    level: DEBUG
+    handlers: [ file_handler, stream_handler ]
+    propagate: no
+  aiogram:
+    level: DEBUG
+    handlers: [stream_handler]
+    propagate: no
+  asyncio:
+    level: DEBUG
+    handlers: [stream_handler]
+    propagate: no
+root:
+  level: DEBUG
+  handlers: [stream_handler]
